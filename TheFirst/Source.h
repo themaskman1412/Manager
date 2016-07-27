@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
@@ -7,7 +8,7 @@ class NgaySinh
 {
 private:
 
-protected:
+//protected:
 	int _ngay;
 	int _thang;
 public:
@@ -23,7 +24,7 @@ class Saler : public NgaySinh
 {
 private:
 
-protected:
+//protected:
 	int _id;
 	char _name[30];	
 	NgaySinh _ngaysinh;

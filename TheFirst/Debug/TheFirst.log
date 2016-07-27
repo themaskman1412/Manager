@@ -1,20 +1,14 @@
-﻿Build started 7/27/2016 11:47:09 AM.
-     1>Project "D:\ngontaylua\Manager\TheFirst\TheFirst.vcxproj" on node 2 (ClCompile target(s)).
+﻿Build started 7/27/2016 1:54:17 PM.
+     1>Project "D:\ngontaylua\Manager\TheFirst\TheFirst.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
-         Source.cpp
-     1>d:\ngontaylua\manager\thefirst\source.cpp(38): error C2511: 'Saler::Saler(int,char *[],NgaySinh,char *[])' : overloaded member function not found in 'Saler'
-                 d:\ngontaylua\manager\thefirst\source.h(23) : see declaration of 'Saler'
-     1>d:\ngontaylua\manager\thefirst\source.cpp(39): error C2597: illegal reference to non-static member 'Saler::_id'
-     1>d:\ngontaylua\manager\thefirst\source.cpp(40): error C2597: illegal reference to non-static member 'Saler::_name'
-     1>d:\ngontaylua\manager\thefirst\source.cpp(40): error C3867: 'Saler::_name': function call missing argument list; use '&Saler::_name' to create a pointer to member
-     1>d:\ngontaylua\manager\thefirst\source.cpp(40): error C2109: subscript requires array or pointer type
-     1>d:\ngontaylua\manager\thefirst\source.cpp(41): error C2597: illegal reference to non-static member 'Saler::_ngaysinh'
-     1>d:\ngontaylua\manager\thefirst\source.cpp(42): error C2597: illegal reference to non-static member 'Saler::_sex'
-     1>d:\ngontaylua\manager\thefirst\source.cpp(42): error C3867: 'Saler::_sex': function call missing argument list; use '&Saler::_sex' to create a pointer to member
-     1>d:\ngontaylua\manager\thefirst\source.cpp(42): error C2109: subscript requires array or pointer type
-     1>Done Building Project "D:\ngontaylua\Manager\TheFirst\TheFirst.vcxproj" (ClCompile target(s)) -- FAILED.
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp
+         Main.cpp
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\ngontaylua\Manager\Debug\TheFirst.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\ngontaylua\Manager\Debug\TheFirst.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\ngontaylua\Manager\Debug\TheFirst.lib" /MACHINE:X86 Debug\Main.obj
+         Debug\Source.obj
+         TheFirst.vcxproj -> D:\ngontaylua\Manager\Debug\TheFirst.exe
+     1>Done Building Project "D:\ngontaylua\Manager\TheFirst\TheFirst.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.44
+Time Elapsed 00:00:00.68

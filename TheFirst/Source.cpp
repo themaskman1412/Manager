@@ -30,16 +30,16 @@ ostream& operator<<(ostream& os, const NgaySinh &ns)
 Saler::Saler()
 {
 	_id = 0;
-	_name[30] = 0;
+	_name[30] = NULL;
 	_ngaysinh = NgaySinh(0, 0);
-	_sex[10] = 0;
+	_sex[10] = NULL;
 }
 Saler::Saler(int id, char name[30], NgaySinh ngaysinh, char sex[10])
 {
 	_id = id;
-	_name[30] = name[30];
+	strcpy_s(_name, name);
 	_ngaysinh = ngaysinh;
-	_sex[10] = sex[10];
+	strcpy_s(_sex, sex);
 }
 Saler::~Saler()
 {
