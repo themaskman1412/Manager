@@ -46,17 +46,23 @@ private:
 	string _name;	
 	NgayThangNam _ngaysinh;
 	string _sex;
+	NgayThangNam _ngaybatdau;
+	string _office;
+	int _salary;
+	string _experience;
+	string _trained;
 //	DiaChi _diachi;
 protected:
 
 public:
 	Saler();
-	Saler(int id, string name, NgayThangNam ngaysinh, string sex);
+	Saler(int id, string name, NgayThangNam ngaysinh, string sex, NgayThangNam ngaybatdau, string office, int salary, string experience, string trained);
 	//Saler(int id, char *name, NgayThangNam ngaysinh, char *sex, DiaChi diachi);
 	~Saler();
 	Saler& Saler::operator=(const Saler &dt);
 	friend ostream& operator<<(ostream& os, const Saler &sl);
 };
+
 
 void NhapNV(Saler nv[20], int &n);
 void XuatDSNV(Saler nv[20], int n);
