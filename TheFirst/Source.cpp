@@ -1,4 +1,6 @@
 #include "Source.h"
+#include <iostream>
+using namespace std;
 
 NgayThangNam::NgayThangNam()
 {
@@ -128,11 +130,65 @@ ostream& operator<<(ostream& os, const Saler &sl)
 	return os;
 }
 
+void Menu()
+{
+	int _choice;
+	system("cls");
+	cout << "Chuong Trinh Quan Ly Nhan Vien Ver 1.0 ";
+	cout << "\n1. Nhap Danh Sach Nhan Vien! ";
+	// Danh sach luon duoc sap xep theo thu tu nhap
+	cout << "\n2. Cap Nhat Thong Tin Nhan Vien! ";
+	// Thong Tin nhan vien khong duoc xoa, chi an khi hien thi
+	// dung flag xoa de xet tinh hien thi.
+	cout << "\n3. Xoa Thong Tin Nhan Vien! ";
+	cout << "\n4. Xuat Thong Tin Nhan Vien! ";
+	cout << "\n5. Tim Kiem Thong Tin Nhan Vien! ";
+	//	cout << "\n6. Xuat Thong Tin Nhan Vien Theo Mot Thu Tu Do Nguoi Dung Can! ";
+	cout << "\nBan Hay Chon Chuc Nang: ";
+	cin >> _choice;
+	switch (_choice)
+	{
+	case 0:
+	{
+			  break;
+	}
+	case 1:
+	{
 
+			  Menu();
+			  break;
+	}
+	case 2:
+	{
+			  Menu();
+			  break;
+	}
+	case 3:
+	{
+			  Menu();
+			  break;
+	}
+	case 4:
+	{
+			  break;
+	}
+	case 5:
+	{
+			  Menu();
+			  break;
+	}
+	case 6:
+	{
+			  Menu();
+			  break;
+	}
+	}
+}
 void NhapNV(Saler nv[20], int &n)
 {	
 	for (int i = 0; i < n; i++)
 	{
+		system("cls");
 		int id, salary, d = 0, m = 0, y = 0;
 		string name, sex, office, experience, trained;
 		DiaChi dc;
@@ -175,6 +231,55 @@ void NhapNV(Saler nv[20], int &n)
 		NhapDiaChi(dc);
 		nv[i] = Saler(id, name, ns, sex, nbd, office, salary,experience, trained, dc);
 	}
+}
+void ThemNV(Saler nv[20], int &n, int &add)
+{
+	for (int i = 0; i < add; i++)
+	{
+		system("cls");
+		int id, salary, d = 0, m = 0, y = 0;
+		string name, sex, office, experience, trained;
+		DiaChi dc;
+		cout << "Nhan vien thu " << i + 1 << ". " << endl;
+		cout << "Nhap ID: ";
+		cin >> id;
+		cout << "Nhap ten nhan vien: ";
+		fflush(stdin);
+		getline(cin, name);
+		cout << "Gioi tinh cua nhan vien: ";
+		fflush(stdin);
+		getline(cin, sex);
+		cout << "Nhap ngay thang nam sinh cua nhan vien!" << endl;
+		cout << "Nhap ngay: ";
+		cin >> d;
+		cout << "Nhap thang: ";
+		cin >> m;
+		cout << "Nhap nam: ";
+		cin >> y;
+		NgayThangNam ns(d, m, y);
+		cout << "Nhap ngay thang nam bat dau lam viec!" << endl;
+		cout << "Nhap ngay: ";
+		cin >> d;
+		cout << "Nhap thang: ";
+		cin >> m;
+		cout << "Nhap nam: ";
+		cin >> y;
+		NgayThangNam nbd(d, m, y);
+		cout << "Vi tri hien tai cua nhan vien: ";
+		fflush(stdin);
+		getline(cin, office);
+		cout << "Luong hien tai cua nhan vien: ";
+		cin >> salary;
+		cout << "Gioi thieu ve kinh nghiem cua ban than: ";
+		fflush(stdin);
+		getline(cin, experience);
+		cout << "Ban duoc training chua? ";
+		fflush(stdin);
+		getline(cin, trained);
+		NhapDiaChi(dc);
+		nv[i + n] = Saler(id, name, ns, sex, nbd, office, salary, experience, trained, dc);
+	}
+	n += add;
 }
 void XuatDSNV(Saler nv[20], int n)
 {

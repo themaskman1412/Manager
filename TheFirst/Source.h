@@ -63,6 +63,7 @@ public:
 	friend ostream& operator<<(ostream& os, const Saler &sl);
 };
 
-
+void Menu();
 void NhapNV(Saler nv[20], int &n);
+void ThemNV(Saler nv[20], int &n, int &add);
 void XuatDSNV(Saler nv[20], int n);
