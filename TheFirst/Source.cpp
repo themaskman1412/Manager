@@ -161,11 +161,13 @@ void NhapNV(Saler nv[20], int &n)
 		cout << "Nhap ID: ";
 		cin >> id;
 		cout << "Nhap ten nhan vien: ";
-		cin >> name;
+		fflush(stdin);
+		getline(cin, name);
 //		DiaChi dc;
 //		NhapDiaChi(dc);
 		cout << "Gioi tinh cua nhan vien: ";
-		cin >> sex;
+		fflush(stdin);
+		getline(cin, sex);
 		cout << "Nhap ngay thang nam sinh cua nhan vien!" << endl;
 		cout << "Nhap ngay: ";
 		cin >> d;
@@ -183,13 +185,16 @@ void NhapNV(Saler nv[20], int &n)
 		cin >> y;
 		NgayThangNam nbd(d, m, y);
 		cout << "Vi tri hien tai cua nhan vien: ";
-		cin >> office;
+		fflush(stdin);
+		getline(cin, office);
 		cout << "Luong hien tai cua nhan vien: ";
 		cin >> salary;
 		cout << "Gioi thieu ve kinh nghiem cua ban than: ";
-		cin >> experience;
+		fflush(stdin);
+		getline(cin, experience);
 		cout << "Ban duoc training chua? ";
-		cin >> trained;
+		fflush(stdin);
+		getline(cin, trained);
 
 		nv[i] = Saler(id, name, ns, sex, nbd, office, salary,experience, trained);
 	}
