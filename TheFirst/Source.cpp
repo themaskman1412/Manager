@@ -25,6 +25,16 @@ NgayThangNam& NgayThangNam::operator=(const NgayThangNam &dt)
 	this->_nam = dt._nam;
 	return *this;
 }
+NgayThangNam& NhapNgayThangNam(NgayThangNam &dt)
+{
+	cout << "Nhap ngay: ";
+	cin >> dt._ngay;
+	cout << "Nhap thang: ";
+	cin >> dt._thang;
+	cout << "Nhap nam: ";
+	cin >> dt._nam;
+	return dt;
+}
 ostream& operator<<(ostream& os, const NgayThangNam &dt)
 {
 	os << dt._ngay << "/" << dt._thang << "/" << dt._nam;
@@ -140,7 +150,7 @@ void Menu()
 	cout << "\n2. Cap Nhat Thong Tin Nhan Vien! ";
 	// Thong Tin nhan vien khong duoc xoa, chi an khi hien thi
 	// dung flag xoa de xet tinh hien thi.
-	cout << "\n3. Xoa Thong Tin Nhan Vien! ";
+	//cout << "\n3. Xoa Thong Tin Nhan Vien! ";
 	cout << "\n4. Xuat Thong Tin Nhan Vien! ";
 	cout << "\n5. Tim Kiem Thong Tin Nhan Vien! ";
 	//	cout << "\n6. Xuat Thong Tin Nhan Vien Theo Mot Thu Tu Do Nguoi Dung Can! ";
@@ -202,21 +212,25 @@ void NhapNV(Saler nv[20], int &n)
 		fflush(stdin);
 		getline(cin, sex);
 		cout << "Nhap ngay thang nam sinh cua nhan vien!" << endl;
-		cout << "Nhap ngay: ";
-		cin >> d;
-		cout << "Nhap thang: ";
-		cin >> m;
-		cout << "Nhap nam: ";
-		cin >> y;
-		NgayThangNam ns(d, m, y);
+		//cout << "Nhap ngay: ";
+		//cin >> d;
+		//cout << "Nhap thang: ";
+		//cin >> m;
+		//cout << "Nhap nam: ";
+		//cin >> y;
+		//NgayThangNam ns(d, m, y);
+		NgayThangNam ns;
+		NhapNgayThangNam(ns);
 		cout << "Nhap ngay thang nam bat dau lam viec!" << endl;
-		cout << "Nhap ngay: ";
-		cin >> d;
-		cout << "Nhap thang: ";
-		cin >> m;
-		cout << "Nhap nam: ";
-		cin >> y;
-		NgayThangNam nbd(d, m, y);
+		//cout << "Nhap ngay: ";
+		//cin >> d;
+		//cout << "Nhap thang: ";
+		//cin >> m;
+		//cout << "Nhap nam: ";
+		//cin >> y;
+		//NgayThangNam nbd(d, m, y);
+		NgayThangNam nbd;
+		NhapNgayThangNam(nbd);
 		cout << "Vi tri hien tai cua nhan vien: ";
 		fflush(stdin);
 		getline(cin, office);
@@ -280,6 +294,95 @@ void ThemNV(Saler nv[20], int &n, int &add)
 		nv[i + n] = Saler(id, name, ns, sex, nbd, office, salary, experience, trained, dc);
 	}
 	n += add;
+}
+void TimNV(Saler nv[20], int&n)
+{
+	Saler filter[20];
+	int _choice;
+	cout << "Ban Muon Tim Dua Theo Thong Tin Nao: ";
+	cout << "\n1. ID ";
+	cout << "\n2. Name ";
+	cout << "\n3. Ngay Sinh ";
+	cout << "\n4. Gioi Tinh ";
+	cout << "\n5. Ngay Bat Dau Lam Viec ";
+	cout << "\n6. Chuc Vu ";
+	cout << "\n7. Muc Luong ";
+	//cout << "\n8. Kinh Nghiem ";
+	//cout << "\n9. Trained? ";
+	//cout << "\n10. Dia Chi ";
+	cin >> _choice;
+	int id, salary;
+	string name, sex, office;
+	NgayThangNam ngaysinh, ngaybatdau;
+	switch (_choice)
+	{
+	case 1:
+	{
+			  //int _int;
+			  cout << "\n Nhap ID nhan vien can tim: ";
+			  cin >> id;
+			  break;
+	}
+	case 2:
+	{
+			  //string _string;
+			  cout << "\n Nhap Ten nhan vien can tim: ";
+			  fflush(stdin);
+			  getline(cin, name);
+			  break;
+	}
+	case 3:
+	{
+			  //int _d, _m, _y;
+			  cout << "\n Nhap ngay thang nam sinh cua nhan vien! ";
+			  //ngaysinh = NgayThangNam _ngaythangnam(_d, _m, _y);
+			  NhapNgayThangNam(ngaysinh);
+			  break;
+	}
+	case 4:
+	{
+			  //string _string;
+			  cout << "\n Nhap Gioi Tinh cua nhan vien can tim: ";
+			  fflush(stdin);
+			  getline(cin, sex);
+			  break;
+	}
+	case 5:
+	{
+			  int _d, _m, _y;
+			  cout << "\n Nhap ngay thang nam bat dau lam viec! ";
+			  //NgayThangNam _ngaythangnam(_d, _m, _y);
+			  NhapNgayThangNam(ngaybatdau);
+			  break;
+	}
+	case 6:
+	{
+			  //string _string;
+			  cout << "\n Nhap Chuc Vu cua nhan vien can tim: ";
+			  fflush(stdin);
+			  getline(cin, office);
+			  break;
+	}
+	case 7:
+	{
+			  //int _int;
+			  cout << "\n Nhap Muc Luong cua nhan vien can tim: ";
+			  cin >> salary;
+			  break;
+	}
+	case 8:
+	{
+			  break;
+	}
+	case 9:
+	{
+			  break;
+	}
+	case 10:
+	{
+			  break;
+	}
+	}
 }
 void XuatDSNV(Saler nv[20], int n)
 {

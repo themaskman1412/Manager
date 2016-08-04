@@ -17,6 +17,7 @@ public:
 	NgayThangNam(int d, int m, int y);
 	~NgayThangNam();
 	NgayThangNam& NgayThangNam::operator=(const NgayThangNam &dt);
+	friend NgayThangNam& NhapNgayThangNam(NgayThangNam &dt);
 	friend ostream& operator<<(ostream& os, const NgayThangNam &dt);
 };
 
@@ -66,4 +67,5 @@ public:
 void Menu();
 void NhapNV(Saler nv[20], int &n);
 void ThemNV(Saler nv[20], int &n, int &add);
+void TimNV(Saler nv[20], int &n);
 void XuatDSNV(Saler nv[20], int n);
