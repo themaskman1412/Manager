@@ -20,26 +20,26 @@ public:
 	friend ostream& operator<<(ostream& os, const NgayThangNam &dt);
 };
 
-//class DiaChi
-//{
-//private:
-//	char *_sonha;
-//	char *_capthon;
-//	char *_capxa;
-//	char *_caphuyen;
-//	char *_captinh;
-//protected:
-//
-//public:
-//	DiaChi();
-//	DiaChi(char *sonha, char *capthon, char *capxa, char *caphuyen, char *captinh);
-//	~DiaChi();
-//	DiaChi& DiaChi::operator=(const DiaChi &dc);
-//	friend DiaChi& NhapDiaChi(DiaChi &dc);
-//	friend ostream& operator<<(ostream& os, const DiaChi &dc);
-//};
+class DiaChi
+{
+private:
+	string _sonha;
+	string _capthon;
+	string _capxa;
+	string _caphuyen;
+	string _captinh;
+protected:
 
-class Saler : public NgayThangNam //, public DiaChi
+public:
+	DiaChi();
+	DiaChi(string sonha, string capthon, string capxa, string caphuyen, string captinh);
+	~DiaChi();
+	DiaChi& DiaChi::operator=(const DiaChi &dc);
+	friend DiaChi& NhapDiaChi(DiaChi &dc);
+	friend ostream& operator<<(ostream& os, const DiaChi &dc);
+};
+
+class Saler : public NgayThangNam , public DiaChi
 {
 private:
 	int _id;
@@ -51,12 +51,12 @@ private:
 	int _salary;
 	string _experience;
 	string _trained;
-//	DiaChi _diachi;
+	DiaChi _diachi;
 protected:
 
 public:
 	Saler();
-	Saler(int id, string name, NgayThangNam ngaysinh, string sex, NgayThangNam ngaybatdau, string office, int salary, string experience, string trained);
+	Saler(int id, string name, NgayThangNam ngaysinh, string sex, NgayThangNam ngaybatdau, string office, int salary, string experience, string trained, DiaChi diachi);
 	//Saler(int id, char *name, NgayThangNam ngaysinh, char *sex, DiaChi diachi);
 	~Saler();
 	Saler& Saler::operator=(const Saler &dt);
