@@ -8,6 +8,8 @@ void main()
 	cin >> n;
 	Saler nv[20];
 	NhapNV(nv, n);
-	ThemNV(nv, n, m);
+	//TimNV(nv, n);
+	XuatOrder(nv, n);
+	//ThemNV(nv, n, m);
 	XuatDSNV(nv, n);
 }
