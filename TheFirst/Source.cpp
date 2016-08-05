@@ -25,6 +25,13 @@ NgayThangNam& NgayThangNam::operator=(const NgayThangNam &dt)
 	this->_nam = dt._nam;
 	return *this;
 }
+bool NgayThangNam::operator==(const NgayThangNam &dt)
+{
+	if (this->_ngay == dt._ngay && this->_thang == dt._thang && this->_nam == dt._nam)
+		return true;
+	else
+		return false;
+}
 NgayThangNam& NhapNgayThangNam(NgayThangNam &dt)
 {
 	cout << "Nhap ngay: ";
@@ -132,6 +139,34 @@ Saler& Saler::operator=(const Saler &sl)
 	this->_trained = sl._trained;
 	this->_diachi = sl._diachi;
 	return *this;
+}
+int Saler::GetID()
+{
+	return _id;
+}
+string Saler::GetName()
+{
+	return this->_name;
+}
+NgayThangNam Saler::GetNgaySinh()
+{
+	return this->_ngaysinh;
+}
+string Saler::GetSex()
+{
+	return this->_sex;
+}
+NgayThangNam Saler::GetNgayBatDau()
+{
+	return this->_ngaybatdau;
+}
+string Saler::GetOffice()
+{
+	return this->_office;
+}
+int Saler::GetSalary()
+{
+	return this->_salary;
 }
 ostream& operator<<(ostream& os, const Saler &sl)
 {
@@ -297,7 +332,7 @@ void ThemNV(Saler nv[20], int &n, int &add)
 }
 void TimNV(Saler nv[20], int&n)
 {
-	Saler filter[20];
+	//Saler filter[20];
 	int _choice;
 	cout << "Ban Muon Tim Dua Theo Thong Tin Nao: ";
 	cout << "\n1. ID ";
@@ -318,70 +353,124 @@ void TimNV(Saler nv[20], int&n)
 	{
 	case 1:
 	{
-			  //int _int;
 			  cout << "\n Nhap ID nhan vien can tim: ";
 			  cin >> id;
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  int _int = nv[i].GetID;
+				  if (_int == id)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 2:
 	{
-			  //string _string;
 			  cout << "\n Nhap Ten nhan vien can tim: ";
 			  fflush(stdin);
 			  getline(cin, name);
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  string _string = nv[i].GetName;
+				  if (_string == name)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 3:
 	{
-			  //int _d, _m, _y;
 			  cout << "\n Nhap ngay thang nam sinh cua nhan vien! ";
-			  //ngaysinh = NgayThangNam _ngaythangnam(_d, _m, _y);
 			  NhapNgayThangNam(ngaysinh);
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  NgayThangNam _datetime = nv[i].GetNgaySinh;
+				  if (_datetime == ngaysinh)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 4:
 	{
-			  //string _string;
 			  cout << "\n Nhap Gioi Tinh cua nhan vien can tim: ";
 			  fflush(stdin);
 			  getline(cin, sex);
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  string _string = nv[i].GetSex;
+				  if (_string == sex)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 5:
 	{
-			  int _d, _m, _y;
 			  cout << "\n Nhap ngay thang nam bat dau lam viec! ";
-			  //NgayThangNam _ngaythangnam(_d, _m, _y);
 			  NhapNgayThangNam(ngaybatdau);
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  NgayThangNam _datetime = nv[i].GetNgayBatDau;
+				  if (_datetime == ngaybatdau)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 6:
 	{
-			  //string _string;
 			  cout << "\n Nhap Chuc Vu cua nhan vien can tim: ";
 			  fflush(stdin);
 			  getline(cin, office);
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  string _string = nv[i].GetOffice;
+				  if (_string == office)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
 	case 7:
 	{
-			  //int _int;
 			  cout << "\n Nhap Muc Luong cua nhan vien can tim: ";
 			  cin >> salary;
+			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  int _int = nv[i].GetSalary;
+				  if (_int == salary)
+				  {
+					  cout << nv[i];
+				  }
+			  }
 			  break;
 	}
-	case 8:
-	{
-			  break;
-	}
-	case 9:
-	{
-			  break;
-	}
-	case 10:
-	{
-			  break;
-	}
+	//case 8:
+	//{
+	//		  break;
+	//}
+	//case 9:
+	//{
+	//		  break;
+	//}
+	//case 10:
+	//{
+	//		  break;
+	//}
 	}
 }
 void XuatDSNV(Saler nv[20], int n)
