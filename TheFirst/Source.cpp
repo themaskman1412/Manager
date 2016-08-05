@@ -142,7 +142,7 @@ Saler& Saler::operator=(const Saler &sl)
 }
 int Saler::GetID()
 {
-	return _id;
+	return this->_id;
 }
 string Saler::GetName()
 {
@@ -332,7 +332,6 @@ void ThemNV(Saler nv[20], int &n, int &add)
 }
 void TimNV(Saler nv[20], int&n)
 {
-	//Saler filter[20];
 	int _choice;
 	cout << "Ban Muon Tim Dua Theo Thong Tin Nao: ";
 	cout << "\n1. ID ";
@@ -358,7 +357,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  int _int = nv[i].GetID;
+				  int _int = nv[i].GetID();
 				  if (_int == id)
 				  {
 					  cout << nv[i];
@@ -374,7 +373,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  string _string = nv[i].GetName;
+				  string _string = nv[i].GetName();
 				  if (_string == name)
 				  {
 					  cout << nv[i];
@@ -389,7 +388,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  NgayThangNam _datetime = nv[i].GetNgaySinh;
+				  NgayThangNam _datetime = nv[i].GetNgaySinh();
 				  if (_datetime == ngaysinh)
 				  {
 					  cout << nv[i];
@@ -405,7 +404,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  string _string = nv[i].GetSex;
+				  string _string = nv[i].GetSex();
 				  if (_string == sex)
 				  {
 					  cout << nv[i];
@@ -420,7 +419,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  NgayThangNam _datetime = nv[i].GetNgayBatDau;
+				  NgayThangNam _datetime = nv[i].GetNgayBatDau();
 				  if (_datetime == ngaybatdau)
 				  {
 					  cout << nv[i];
@@ -436,7 +435,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  string _string = nv[i].GetOffice;
+				  string _string = nv[i].GetOffice();
 				  if (_string == office)
 				  {
 					  cout << nv[i];
@@ -451,7 +450,7 @@ void TimNV(Saler nv[20], int&n)
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
 			  {
-				  int _int = nv[i].GetSalary;
+				  int _int = nv[i].GetSalary();
 				  if (_int == salary)
 				  {
 					  cout << nv[i];
