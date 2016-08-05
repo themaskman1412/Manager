@@ -9,6 +9,7 @@ void main()
 	Saler nv[20];
 	NhapNV(nv, n);
 	//TimNV(nv, n);
+	XuatOrder(nv, n);
 	//ThemNV(nv, n, m);
 	XuatDSNV(nv, n);
 }

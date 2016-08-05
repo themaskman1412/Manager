@@ -79,6 +79,7 @@ void Menu();
 void NhapNV(Saler nv[20], int &n);
 void ThemNV(Saler nv[20], int &n, int &add);
 void TimNV(Saler nv[20], int &n);
+void XuatOrder(Saler nv[20], int &n);
 void XuatDSNV(Saler nv[20], int n);
 
 #endif

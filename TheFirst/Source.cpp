@@ -332,18 +332,20 @@ void ThemNV(Saler nv[20], int &n, int &add)
 }
 void TimNV(Saler nv[20], int&n)
 {
+	system("cls");
 	int _choice;
-	cout << "Ban Muon Tim Dua Theo Thong Tin Nao: ";
-	cout << "\n1. ID ";
-	cout << "\n2. Name ";
-	cout << "\n3. Ngay Sinh ";
-	cout << "\n4. Gioi Tinh ";
-	cout << "\n5. Ngay Bat Dau Lam Viec ";
-	cout << "\n6. Chuc Vu ";
-	cout << "\n7. Muc Luong ";
-	//cout << "\n8. Kinh Nghiem ";
-	//cout << "\n9. Trained? ";
-	//cout << "\n10. Dia Chi ";
+	cout << "\n Ban Muon Tim Dua Theo Thong Tin Nao: ";
+	cout << "\n 1. ID ";
+	cout << "\n 2. Name ";
+	cout << "\n 3. Ngay Sinh ";
+	cout << "\n 4. Gioi Tinh ";
+	cout << "\n 5. Ngay Bat Dau Lam Viec ";
+	cout << "\n 6. Chuc Vu ";
+	cout << "\n 7. Muc Luong ";
+	//cout << "\n 8. Kinh Nghiem ";
+	//cout << "\n 9. Trained? ";
+	//cout << "\n 10. Dia Chi ";
+	cout << "\n Chon muc can tim: ";
 	cin >> _choice;
 	int id, salary;
 	string name, sex, office;
@@ -383,7 +385,7 @@ void TimNV(Saler nv[20], int&n)
 	}
 	case 3:
 	{
-			  cout << "\n Nhap ngay thang nam sinh cua nhan vien! ";
+			  cout << "\n Nhap ngay thang nam sinh cua nhan vien! " << endl;
 			  NhapNgayThangNam(ngaysinh);
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
@@ -414,7 +416,7 @@ void TimNV(Saler nv[20], int&n)
 	}
 	case 5:
 	{
-			  cout << "\n Nhap ngay thang nam bat dau lam viec! ";
+			  cout << "\n Nhap ngay thang nam bat dau lam viec! " << endl;
 			  NhapNgayThangNam(ngaybatdau);
 			  cout << "\n Nhan vien phu hop voi dieu kien : " << endl;
 			  for (int i = 0; i < n; i++)
@@ -458,18 +460,163 @@ void TimNV(Saler nv[20], int&n)
 			  }
 			  break;
 	}
-	//case 8:
-	//{
-	//		  break;
-	//}
-	//case 9:
-	//{
-	//		  break;
-	//}
-	//case 10:
-	//{
-	//		  break;
-	//}
+		//case 8:
+		//{
+		//		  break;
+		//}
+		//case 9:
+		//{
+		//		  break;
+		//}
+		//case 10:
+		//{
+		//		  break;
+		//}
+	}
+}
+void XuatOrder(Saler nv[20], int &n)
+{
+	int _choice;
+	cout << "\n Ban Muon Sap Xep Dua Theo Thong Tin Nao: ";
+	cout << "\n 1. ID ";
+	cout << "\n 2. Name ";
+	cout << "\n 3. Ngay Sinh ";
+	cout << "\n 4. Gioi Tinh ";
+	cout << "\n 5. Ngay Bat Dau Lam Viec ";
+	cout << "\n 6. Chuc Vu ";
+	cout << "\n 7. Muc Luong ";
+	//cout << "\n 8. Kinh Nghiem ";
+	//cout << "\n 9. Trained? ";
+	//cout << "\n 10. Dia Chi ";
+	cout << "\n Chon muc can tim: ";
+	cin >> _choice;
+	switch (_choice)
+	{
+	case 1:
+	{
+			  for (int i = 0; i < n - 1; i++)
+			  {
+				  for (int j = i + 1; j < n; j++)
+				  {
+					  if (nv[i].GetID() > nv[j].GetID())
+					  {
+						  Saler temp = nv[i];
+						  nv[i] = nv[j];
+						  nv[j] = temp;
+					  }
+				  }
+			  }
+			  cout << "\n Sap xep dua theo ID! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 2:
+	{
+			  for (int i = 0; i < n - 1; i++)
+			  {
+				  for (int j = i + 1; j < n; j++)
+				  {
+					  if (nv[i].GetName() > nv[j].GetName())
+					  {
+						  Saler temp = nv[i];
+						  nv[i] = nv[j];
+						  nv[j] = temp;
+					  }
+				  }
+			  }
+			  cout << "\n Sap xep dua theo Name! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 3:
+	{
+			  //
+			  cout << "\n Sap xep dua theo NgaySinh! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 4:
+	{
+			  for (int i = 0; i < n - 1; i++)
+			  {
+				  for (int j = i + 1; j < n; j++)
+				  {
+					  if (nv[i].GetSex() > nv[j].GetSex())
+					  {
+						  Saler temp = nv[i];
+						  nv[i] = nv[j];
+						  nv[j] = temp;
+					  }
+				  }
+			  }
+			  cout << "\n Sap xep dua theo Sex! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 5:
+	{
+			  //
+			  cout << "\n Sap xep dua theo Ngay Bat Dau Lam Viec! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 6:
+	{
+			  for (int i = 0; i < n - 1; i++)
+			  {
+				  for (int j = i + 1; j < n; j++)
+				  {
+					  if (nv[i].GetOffice() > nv[j].GetOffice())
+					  {
+						  Saler temp = nv[i];
+						  nv[i] = nv[j];
+						  nv[j] = temp;
+					  }
+				  }
+			  }
+			  cout << "\n Sap xep dua theo Chuc Vu! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
+	case 7:
+	{
+			  for (int i = 0; i < n - 1; i++)
+			  {
+				  for (int j = i + 1; j < n; j++)
+				  {
+					  if (nv[i].GetSalary() > nv[j].GetSalary())
+					  {
+						  Saler temp = nv[i];
+						  nv[i] = nv[j];
+						  nv[j] = temp;
+					  }
+				  }
+			  }
+			  cout << "\n Sap xep dua theo Luong! " << endl;
+			  for (int i = 0; i < n; i++)
+			  {
+				  cout << nv[i];
+			  }
+			  break;
+	}
 	}
 }
 void XuatDSNV(Saler nv[20], int n)
